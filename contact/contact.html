@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Carver Street Finds</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Carver Street Finds</h1>
+
+        <p>
+            A personal guide to interesting places worth exploring,
+            relaxing in, and discovering around Manila.
+        </p>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Contact Me</h2>
+
+            <p>
+                Have a question, suggestion, or recommendation for a place
+                around Manila? Feel free to send me a message.
+            </p>
+
+            <form>
+
+                <fieldset>
+                    <legend>Your details</legend>
+
+                    <p>
+                        <label for="name">Name:</label><br>
+                        <input type="text" id="name" name="name" required>
+                    </p>
+
+                    <p>
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+
+                    <p>
+                        <label for="subject">Subject:</label><br>
+
+                        <select id="subject" name="subject">
+                            <option value="">-- Please choose --</option>
+                            <option value="suggest-place">Suggest a place</option>
+                            <option value="correct-detail">Correct a detail</option>
+                            <option value="ask-question">Ask a question</option>
+                            <option value="other">Something else</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="message">Message:</label><br>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            cols="40"
+                            required
+                        ></textarea>
+                    </p>
+
+                </fieldset>
+
+                <p>
+                    <button type="submit">Send message</button>
+                </p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Carver Street Finds</p>
+    </footer>
+
+</body>
+</html>
