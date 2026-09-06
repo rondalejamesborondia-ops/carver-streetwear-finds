@@ -73,6 +73,64 @@
 
     </main>
 
+        <section>
+        <h2>Suggest a Place</h2>
+
+        <form>
+            <p>
+                <label for="place-name">Place Name:</label>
+                <input type="text" id="place-name" name="place-name" required>
+            </p>
+
+            <fieldset>
+                <legend>What type of place is it?</legend>
+
+                <p>
+                    <input type="radio" id="food" name="category" value="food">
+                    <label for="food">Food</label>
+                </p>
+
+                <p>
+                    <input type="radio" id="study-spot" name="category" value="study-spot">
+                    <label for="study-spot">Study Spot</label>
+                </p>
+
+                <p>
+                    <input type="radio" id="outdoors" name="category" value="outdoors">
+                    <label for="outdoors">Outdoors</label>
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>What's good about it?</legend>
+
+                <p>
+                    <input type="checkbox" id="affordable" name="good-points" value="affordable">
+                    <label for="affordable">Affordable</label>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="good-wifi" name="good-points" value="good-wifi">
+                    <label for="good-wifi">Good Wi-Fi</label>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="quiet" name="good-points" value="quiet">
+                    <label for="quiet">Quiet</label>
+                </p>
+            </fieldset>
+
+            <p>
+                <label for="contact-email">Contact Email:</label>
+                <input type="email" id="contact-email" name="contact-email" required>
+            </p>
+
+            <p>
+                <button type="submit">Suggest Place</button>
+            </p>
+        </form>
+    </section>
+
     <footer>
         <p>&copy; 2026 Carver Street Finds</p>
     </footer>
