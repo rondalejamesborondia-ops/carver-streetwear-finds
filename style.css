@@ -1,0 +1,1538 @@
+
+/* =========================================
+   CARVER STREET FINDS
+   Premium Manila Travel Guide
+========================================= */
+
+/* 1. DESIGN SYSTEM */
+
+:root {
+    --brand-color: #29483b;
+    --brand-dark: #192f26;
+    --brand-light: #e8eee8;
+
+    --ink-color: #292c27;
+    --muted-color: #73786f;
+
+    --background-color: #f8f6f0;
+    --surface-color: #fffefa;
+    --surface-soft: #efede4;
+
+    --accent-color: #d8c29a;
+    --accent-dark: #8b7450;
+
+    --border-color: #e2ded2;
+    --border-strong: #cfc9ba;
+
+    --content-width: 1180px;
+    --page-gutter: clamp(22px, 6vw, 88px);
+    --section-space: clamp(60px, 8vw, 100px);
+
+    --radius-small: 6px;
+    --radius-medium: 14px;
+    --radius-large: 22px;
+
+    --shadow-soft: 0 8px 25px rgba(31, 47, 38, 0.05);
+    --shadow-card: 0 18px 42px rgba(31, 47, 38, 0.09);
+}
+
+/* 2. RESET AND BASE */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 28px;
+}
+
+body {
+    margin: 0;
+    background: var(--background-color);
+    color: var(--ink-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+figure {
+    min-width: 0;
+    margin: 0;
+}
+
+figcaption,
+.image-caption {
+    margin-top: 12px;
+    color: var(--muted-color);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--brand-color);
+    line-height: 1.2;
+}
+
+h1,
+h2,
+.card-content h3,
+.detail-card h3,
+.best-time-copy h2,
+.closing-section h2,
+.closing-cta h2,
+.food-feature-copy h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: clamp(2.8rem, 6vw, 5.3rem);
+    letter-spacing: -0.055em;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: -0.045em;
+}
+
+h3 {
+    font-size: 1.3rem;
+    letter-spacing: -0.025em;
+}
+
+p {
+    max-width: 75ch;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--accent-dark);
+    outline-offset: 4px;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+::selection {
+    background: var(--brand-color);
+    color: var(--surface-color);
+}
+
+.eyebrow {
+    margin-bottom: 14px;
+    color: var(--accent-dark);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.17em;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+.text-muted {
+    color: var(--muted-color);
+}
+
+/* 3. HEADER AND NAVIGATION */
+
+.site-header {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 22px var(--page-gutter);
+    background: var(--brand-dark);
+    color: var(--surface-color);
+}
+
+.site-header > a,
+.site-logo,
+.brand {
+    flex-shrink: 0;
+    color: var(--surface-color);
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.site-logo span {
+    display: block;
+    margin-top: 3px;
+    color: var(--accent-color);
+    font-size: 0.64rem;
+    letter-spacing: 0.2em;
+}
+
+.site-header nav ul,
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 26px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-header nav a,
+nav a {
+    display: inline-block;
+    padding: 8px 0;
+    color: #f5f4ed;
+    font-size: 0.86rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.site-header nav a:hover,
+.site-header nav a[aria-current="page"],
+nav a:hover,
+nav a[aria-current="page"] {
+    color: var(--accent-color);
+}
+
+/* Compatibility with older plain headers */
+
+body > header:not(.site-header) {
+    padding: 26px var(--page-gutter);
+    background: var(--brand-dark);
+    color: var(--surface-color);
+}
+
+body > header:not(.site-header) h1,
+body > header:not(.site-header) h2 {
+    color: var(--surface-color);
+}
+
+/* 4. GENERAL PAGE LAYOUT */
+
+.home-main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+.travel-guide {
+    width: min(var(--content-width), 88%);
+    margin: 0 auto;
+}
+
+body > main:not(.home-main) {
+    width: min(var(--content-width), 88%);
+    margin: 0 auto;
+    padding: 60px 0 80px;
+}
+
+body > main:not(.home-main) > section {
+    margin-bottom: 64px;
+}
+
+body > main:not(.home-main) > section > h2 {
+    margin-top: 0;
+}
+
+/* 5. HOMEPAGE HERO */
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: clamp(34px, 5vw, 76px);
+    padding: clamp(64px, 8vw, 112px) var(--page-gutter);
+    background:
+        radial-gradient(
+            ellipse at 90% 15%,
+            rgba(216, 194, 154, 0.24),
+            transparent 40%
+        ),
+        var(--background-color);
+}
+
+.hero-content,
+.hero-copy {
+    min-width: 0;
+    max-width: 720px;
+}
+
+.hero h1 {
+    margin: 12px 0 24px;
+    font-size: clamp(3rem, 6vw, 5.4rem);
+    line-height: 1.05;
+}
+
+.hero h1 em {
+    color: var(--accent-dark);
+    font-weight: 400;
+}
+
+.hero-description,
+.hero-copy > p:not(.eyebrow) {
+    max-width: 580px;
+    color: var(--muted-color);
+    font-size: 1.04rem;
+    line-height: 1.85;
+}
+
+.hero-image img {
+    width: 100%;
+    height: clamp(300px, 38vw, 490px);
+    border-radius: var(--radius-medium);
+    object-fit: cover;
+}
+
+.hero-note {
+    align-self: end;
+    margin: 0;
+    color: var(--muted-color);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    font-style: italic;
+}
+
+.note-line {
+    display: block;
+    width: 48px;
+    height: 2px;
+    margin-bottom: 16px;
+    background: var(--accent-color);
+}
+
+/* 6. BUTTONS */
+
+.button-link,
+button,
+.back-link a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 12px 23px;
+    border: 1px solid var(--brand-color);
+    border-radius: var(--radius-small);
+    background: var(--brand-color);
+    color: var(--surface-color);
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 1.4;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.button-link {
+    margin-top: 14px;
+}
+
+.button-link:hover,
+button:hover {
+    transform: translateY(-2px);
+    border-color: var(--brand-dark);
+    background: var(--brand-dark);
+    color: var(--surface-color);
+    box-shadow: var(--shadow-soft);
+}
+
+.button-light {
+    border-color: var(--surface-color);
+    background: var(--surface-color);
+    color: var(--brand-dark);
+}
+
+.button-light:hover {
+    border-color: var(--accent-color);
+    background: var(--accent-color);
+    color: var(--brand-dark);
+}
+
+/* 7. QUICK CATEGORY LINKS */
+
+.explore-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 0 var(--page-gutter);
+    background: var(--brand-color);
+}
+
+.explore-strip a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 88px;
+    padding: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.18);
+    color: var(--surface-color);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    transition: background 0.2s ease;
+}
+
+.explore-strip a:first-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.explore-strip a > span {
+    font-size: 0.9rem;
+    letter-spacing: 0;
+}
+
+.explore-strip a:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* 8. SHARED SECTION HEADINGS */
+
+.destinations-section,
+.guide-section,
+.food-section,
+.ideas-section,
+.creator-section {
+    margin-bottom: var(--section-space);
+}
+
+.destinations-section {
+    padding: var(--section-space) var(--page-gutter);
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 36px;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+.section-heading > p,
+.section-intro {
+    max-width: 430px;
+    margin-bottom: 4px;
+    color: var(--muted-color);
+}
+
+/* 9. DESTINATION CARDS */
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 25px;
+}
+
+.destination-card {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    background: var(--surface-color);
+    box-shadow: 0 3px 12px rgba(31, 47, 38, 0.025);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card);
+}
+
+.card-image-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: var(--surface-soft);
+}
+
+.destination-card img,
+.card-image-link img {
+    width: 100%;
+    height: 255px;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.destination-card:hover img,
+.card-image-link:hover img {
+    transform: scale(1.045);
+}
+
+.image-number {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    padding: 6px 11px;
+    border-radius: 3px;
+    background: var(--surface-color);
+    color: var(--brand-dark);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-category {
+    margin-bottom: 10px;
+    color: var(--accent-dark);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.card-content h3 {
+    margin-bottom: 12px;
+    font-size: 1.55rem;
+    line-height: 1.25;
+}
+
+.card-content h3 a {
+    color: var(--brand-color);
+}
+
+.card-content > p:not(.card-category) {
+    margin-bottom: 20px;
+    color: var(--muted-color);
+    font-size: 0.92rem;
+    line-height: 1.8;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--accent-color);
+    color: var(--brand-color);
+    font-size: 0.88rem;
+    font-weight: 700;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.text-link:hover {
+    color: var(--accent-dark);
+    border-color: var(--brand-color);
+}
+
+/* 10. SHARED IDEAS SECTION */
+
+.ideas-section {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(35px, 7vw, 80px);
+    padding: var(--section-space) var(--page-gutter);
+    background: var(--surface-soft);
+}
+
+.ideas-copy h2 {
+    max-width: 520px;
+}
+
+.ideas-copy > p:not(.eyebrow) {
+    color: var(--muted-color);
+}
+
+.ideas-list {
+    border-top: 1px solid var(--border-strong);
+}
+
+.idea-item {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 18px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--border-strong);
+}
+
+.idea-number {
+    color: var(--accent-dark);
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.idea-item h3 {
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+}
+
+.idea-item p {
+    margin-bottom: 0;
+    color: var(--muted-color);
+    font-size: 0.92rem;
+}
+
+/* 11. CREATOR SECTION */
+
+.creator-section {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: clamp(35px, 7vw, 70px);
+    padding: var(--section-space) var(--page-gutter);
+}
+
+.creator-image img {
+    width: 100%;
+    max-height: 460px;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-medium);
+    object-fit: cover;
+}
+
+.creator-copy h2 {
+    max-width: 520px;
+}
+
+.creator-copy > p:not(.eyebrow) {
+    color: var(--muted-color);
+}
+
+/* 12. BEST TIME AND FOOD SECTIONS */
+
+.best-time-section {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: 42px;
+    margin: 0 var(--page-gutter) var(--section-space);
+    padding: clamp(22px, 4vw, 38px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    background: var(--surface-soft);
+}
+
+.best-time-image img {
+    width: 100%;
+    height: 370px;
+    border-radius: var(--radius-small);
+    object-fit: cover;
+}
+
+.best-time-copy h2,
+.closing-section h2 {
+    margin: 8px 0 18px;
+}
+
+.best-time-copy > p:not(.eyebrow) {
+    color: #555f58;
+}
+
+.food-section {
+    padding: 0 var(--page-gutter);
+}
+
+.food-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: 34px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    background: var(--surface-color);
+    box-shadow: var(--shadow-soft);
+}
+
+.food-feature > img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.food-feature-copy {
+    padding: 30px;
+}
+
+.food-feature-copy h3 {
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+}
+
+.food-feature-copy > p:not(.card-category) {
+    color: var(--muted-color);
+}
+
+/* 13. CLOSING CALL TO ACTION */
+
+.closing-section,
+.closing-cta {
+    padding: clamp(52px, 7vw, 82px) var(--page-gutter);
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(216, 194, 154, 0.13),
+            transparent 65%
+        ),
+        var(--brand-color);
+    color: var(--surface-color);
+    text-align: center;
+}
+
+.closing-section h2,
+.closing-cta h2 {
+    max-width: 760px;
+    margin: 8px auto 20px;
+    color: var(--surface-color);
+}
+
+.closing-section > p:not(.eyebrow),
+.closing-cta > p:not(.eyebrow) {
+    max-width: 620px;
+    margin: 12px auto 25px;
+    color: #e0e6e0;
+}
+
+.closing-section .eyebrow,
+.closing-cta .eyebrow {
+    color: var(--accent-color);
+}
+
+.closing-section .button-link {
+    border-color: var(--surface-color);
+    background: var(--surface-color);
+    color: var(--brand-dark);
+}
+
+.closing-section .button-link:hover {
+    border-color: var(--accent-color);
+    background: var(--accent-color);
+}
+
+/* 14. DESTINATION DETAIL PAGES */
+
+.place-detail {
+    width: min(1060px, 88%);
+    margin: 0 auto;
+    padding: 62px 0 84px;
+}
+
+.place-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: clamp(30px, 5vw, 62px);
+    margin-bottom: 66px;
+}
+
+.place-hero .place-info {
+    min-width: 0;
+    border-top: 0;
+}
+
+.place-hero h1 {
+    margin: 10px 0 22px;
+    font-size: clamp(2.8rem, 5.3vw, 4.65rem);
+    line-height: 1.04;
+}
+
+.place-hero .place-info > p:not(.eyebrow) {
+    color: var(--muted-color);
+    line-height: 1.9;
+}
+
+.place-hero figure {
+    min-width: 0;
+}
+
+.place-cover {
+    width: 100%;
+    height: clamp(310px, 40vw, 455px);
+    border: 1px solid rgba(41, 72, 59, 0.08);
+    border-radius: var(--radius-medium);
+    object-fit: cover;
+    box-shadow: var(--shadow-card);
+}
+
+/* Individual information sections */
+
+.place-detail > .place-section {
+    margin: 0 0 32px;
+    padding: clamp(25px, 4vw, 40px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    background: var(--surface-color);
+    box-shadow: var(--shadow-soft);
+}
+
+.place-section > .eyebrow {
+    margin-bottom: 10px;
+}
+
+.place-section > h2 {
+    margin: 8px 0 22px;
+    font-size: clamp(1.95rem, 3.8vw, 2.75rem);
+    line-height: 1.18;
+}
+
+.place-section > p:not(.eyebrow) {
+    color: #555f58;
+    line-height: 1.9;
+}
+
+.place-section > ul {
+    padding-left: 24px;
+}
+
+.place-section > ul li {
+    margin-bottom: 10px;
+    padding-left: 4px;
+    color: #555f58;
+}
+
+.place-section > ul li::marker {
+    color: var(--accent-dark);
+}
+
+/* 15. DETAIL CARDS AND PLACE INFORMATION */
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.detail-card {
+    min-width: 0;
+    margin: 0;
+    padding: 24px;
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--brand-color);
+    border-radius: var(--radius-small);
+    background: #fffefa;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-soft);
+}
+
+.detail-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+.detail-card p {
+    margin-bottom: 0;
+    color: var(--muted-color);
+    font-size: 0.92rem;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.detail-card a {
+    display: inline-block;
+    margin-top: 16px;
+    color: var(--brand-color);
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+    text-underline-offset: 4px;
+}
+
+.detail-card a:hover {
+    color: var(--accent-dark);
+}
+
+/* Optional structured place information */
+
+.place-info:not(.place-hero .place-info) {
+    border-top: 1px solid var(--border-color);
+}
+
+.place-info p {
+    display: grid;
+    grid-template-columns: minmax(140px, 0.7fr) minmax(0, 1.3fr);
+    gap: 24px;
+    margin: 0;
+    padding: 17px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.place-info strong {
+    color: var(--brand-color);
+}
+
+.place-info span {
+    color: #515b54;
+}
+
+/* 16. VISITOR NOTES AND RELATED LINKS */
+
+.visitor-note {
+    margin: 30px 0 0;
+    padding: clamp(22px, 4vw, 32px);
+    border: 1px solid #e1d7c3;
+    border-left: 4px solid var(--accent-color);
+    border-radius: var(--radius-small);
+    background: #f5f1e7;
+    color: #515b54;
+}
+
+.visitor-note > :last-child {
+    margin-bottom: 0;
+}
+
+.visitor-note h3 {
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+}
+
+.visitor-note a {
+    color: var(--brand-color);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+    text-underline-offset: 3px;
+}
+
+.visitor-note ul {
+    padding-left: 22px;
+}
+
+.visitor-note li {
+    margin-bottom: 9px;
+}
+
+.related-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.related-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 66px;
+    padding: 17px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-small);
+    background: var(--surface-color);
+    color: var(--brand-color);
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 1.5;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.related-links a:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-strong);
+    background: var(--surface-soft);
+}
+
+/* 17. BACK TO DISCOVER MANILA */
+
+.back-link {
+    margin: 42px 0 12px;
+}
+
+.back-link a {
+    border-color: var(--brand-color);
+    background: transparent;
+    color: var(--brand-color);
+}
+
+.back-link a:hover {
+    background: var(--brand-color);
+    color: var(--surface-color);
+}
+
+/* 18. ABOUT AND CONTACT PAGES */
+
+body > main:not(.home-main):not(.place-detail) > section {
+    margin-bottom: 56px;
+}
+
+body > main:not(.home-main):not(.place-detail) > section > h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+body > main:not(.home-main):not(.place-detail) article {
+    margin: 22px 0;
+    padding: 28px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    background: var(--surface-color);
+    box-shadow: var(--shadow-soft);
+}
+
+body > main:not(.home-main):not(.place-detail) article h3 {
+    margin-top: 0;
+}
+
+body > main:not(.home-main):not(.place-detail) > section > img,
+body > main:not(.home-main):not(.place-detail) article img {
+    width: 100%;
+    max-width: 700px;
+    max-height: 460px;
+    margin: 22px 0;
+    border-radius: var(--radius-medium);
+    object-fit: cover;
+}
+
+/* 19. TABLES */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface-color);
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: var(--brand-color);
+    color: var(--surface-color);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+tr:nth-child(even) td {
+    background: #f8f6f0;
+}
+
+/* 20. FORMS AND INPUT CONTROLS */
+
+form {
+    width: 100%;
+    max-width: 720px;
+}
+
+.place-section form {
+    max-width: 100%;
+    margin-top: 24px;
+}
+
+form > p {
+    margin-bottom: 22px;
+}
+
+label {
+    display: inline-block;
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 7px;
+    padding: 13px 15px;
+    border: 1px solid #c9cec4;
+    border-radius: var(--radius-small);
+    background: var(--surface-color);
+    color: var(--ink-color);
+    line-height: 1.5;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #969a91;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--brand-color);
+    box-shadow: 0 0 0 3px rgba(41, 72, 59, 0.1);
+    outline: none;
+}
+
+select {
+    cursor: pointer;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+fieldset {
+    min-width: 0;
+    margin: 25px 0;
+    padding: 22px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    background: #fbfaf6;
+}
+
+fieldset p {
+    margin: 12px 0;
+}
+
+legend {
+    padding: 0 8px;
+    color: var(--brand-color);
+    font-weight: 700;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    margin: 0 9px 0 0;
+    vertical-align: -3px;
+    accent-color: var(--brand-color);
+    cursor: pointer;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    display: inline;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+/* Keep checkbox and radio groups readable */
+
+fieldset label {
+    line-height: 1.8;
+}
+
+form button,
+form input[type="submit"] {
+    width: auto;
+    max-width: 100%;
+    margin-top: 8px;
+    padding: 13px 24px;
+    border: 1px solid var(--brand-color);
+    border-radius: var(--radius-small);
+    background: var(--brand-color);
+    color: var(--surface-color);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+form input[type="submit"] {
+    display: inline-flex;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+    background: var(--brand-dark);
+}
+
+/* 21. FOOTER */
+
+.site-footer {
+    margin-top: 0;
+    padding: 42px var(--page-gutter);
+    background: var(--brand-dark);
+    color: #e5e8e5;
+    text-align: center;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--surface-color);
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.site-footer p {
+    margin: 5px auto;
+    font-size: 0.85rem;
+}
+
+.site-footer a {
+    color: #e5e8e5;
+    text-decoration: underline;
+    text-decoration-color: rgba(216, 194, 154, 0.5);
+    text-underline-offset: 4px;
+}
+
+.site-footer a:hover {
+    color: var(--accent-color);
+}
+
+.site-footer .copyright {
+    margin-top: 20px;
+    color: #bdc7bf;
+    font-size: 0.78rem;
+}
+
+/* 22. TABLET RESPONSIVENESS */
+
+@media (max-width: 900px) {
+    .destination-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .detail-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .related-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .ideas-section,
+    .creator-section {
+        gap: 36px;
+    }
+
+    .place-hero {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+        gap: 30px;
+    }
+
+    .place-cover {
+        height: 360px;
+    }
+
+    .place-detail > .place-section {
+        padding: 28px;
+    }
+
+    .hero {
+        gap: 35px;
+    }
+}
+
+/* 23. MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+    :root {
+        --page-gutter: 6%;
+        --section-space: 58px;
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px var(--page-gutter);
+    }
+
+    .site-header nav,
+    .site-header nav ul {
+        width: 100%;
+    }
+
+    .site-header nav ul {
+        gap: 5px 20px;
+    }
+
+    .site-header nav a {
+        padding: 5px 0;
+        font-size: 0.84rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 58px var(--page-gutter);
+    }
+
+    .hero h1 {
+        font-size: clamp(2.7rem, 12vw, 3.8rem);
+    }
+
+    .hero-description,
+    .hero-copy > p:not(.eyebrow) {
+        font-size: 0.98rem;
+    }
+
+    .hero-image img {
+        height: 280px;
+        border-radius: var(--radius-medium);
+    }
+
+    .hero-note {
+        display: none;
+    }
+
+    .explore-strip {
+        grid-template-columns: 1fr;
+        padding: 0 var(--page-gutter);
+    }
+
+    .explore-strip a,
+    .explore-strip a:first-child {
+        min-height: 62px;
+        padding: 15px 8px;
+        border-right: 0;
+        border-left: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .destinations-section,
+    .creator-section {
+        padding: var(--section-space) var(--page-gutter);
+    }
+
+    .destination-grid,
+    .detail-grid,
+    .related-links {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .destination-card img,
+    .card-image-link img {
+        height: 250px;
+    }
+
+    .card-content {
+        padding: 22px;
+    }
+
+    .ideas-section,
+    .creator-section {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .idea-item {
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .creator-image img {
+        max-height: 350px;
+        aspect-ratio: 5 / 4;
+    }
+
+    .best-time-section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-right: var(--page-gutter);
+        margin-left: var(--page-gutter);
+        padding: 20px;
+    }
+
+    .best-time-image img {
+        height: 260px;
+    }
+
+    .food-section {
+        padding: 0 var(--page-gutter);
+    }
+
+    .food-feature {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .food-feature > img {
+        height: 250px;
+    }
+
+    .food-feature-copy {
+        padding: 23px;
+    }
+
+    .closing-section,
+    .closing-cta {
+        padding: 50px var(--page-gutter);
+    }
+
+    body > main:not(.home-main) {
+        width: 88%;
+        padding: 36px 0 52px;
+    }
+
+    .place-detail {
+        width: 88%;
+        padding: 38px 0 54px;
+    }
+
+    .place-hero {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 42px;
+    }
+
+    .place-hero h1 {
+        font-size: clamp(2.8rem, 12vw, 3.8rem);
+    }
+
+    .place-cover {
+        height: 280px;
+    }
+
+    .place-detail > .place-section {
+        margin-bottom: 22px;
+        padding: 23px 20px;
+        border-radius: var(--radius-medium);
+    }
+
+    .place-section > h2 {
+        font-size: 2rem;
+    }
+
+    .detail-card {
+        padding: 22px;
+    }
+
+    .place-info p {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .visitor-note {
+        margin-top: 25px;
+        padding: 21px;
+    }
+
+    .related-links {
+        grid-template-columns: 1fr;
+    }
+
+    .related-links a {
+        min-height: 58px;
+    }
+
+    .back-link {
+        margin-top: 30px;
+    }
+
+    body > main:not(.home-main):not(.place-detail) article {
+        padding: 22px;
+    }
+
+    th,
+    td {
+        padding: 9px;
+        font-size: 0.82rem;
+        overflow-wrap: anywhere;
+    }
+
+    fieldset {
+        padding: 16px;
+    }
+
+    .site-footer {
+        padding: 32px var(--page-gutter);
+    }
+}
+
+/* 24. SMALL MOBILE SCREENS */
+
+@media (max-width: 380px) {
+    .site-header nav ul {
+        gap: 4px 14px;
+    }
+
+    .site-header nav a {
+        font-size: 0.8rem;
+    }
+
+    .place-hero h1 {
+        font-size: 2.65rem;
+    }
+
+    .place-detail > .place-section {
+        padding: 20px 16px;
+    }
+
+    .detail-card {
+        padding: 19px;
+    }
+
+    .button-link,
+    button,
+    .back-link a {
+        padding: 11px 17px;
+    }
+}
+
+/* 25. REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

@@ -3,78 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carver Street Finds</title>
-
-    <style>
-     img {
-        width: 500px;
-        height: 400px;
-        object-fit: cover;
-        
-    }
-    </style>
-    
+    <meta name="description" content="Discover Manila through its historic landmarks, museums, green spaces, and local food with Carver Street Finds.">
+    <title>Carver Street Finds | Discover Manila</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Carver Street Finds</h1>
+    <header class="site-header">
+        <a class="brand" href="index.html">CARVER STREET FINDS</a>
 
-    <p>A personal guide to interesting places worth exploring, relaxing in, and discovering around Manila.</p>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section>
-        <h2>Rondale James Borondia</h2>
+    <main class="travel-guide">
 
-        <p>
-            I'm Rondale James Borondia, a student who enjoys exploring 
-            different places around Manila, discovering new spots, and 
-            finding places where I can relax and spend time with friends.
-        </p>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow">YOUR GUIDE TO THE CITY</p>
+                <h1>Discover Manila, one place at a time.</h1>
+                <p>
+                    From historic streets and remarkable museums to peaceful
+                    parks and unforgettable local food, explore the places
+                    that make Manila worth discovering.
+                </p>
+                <a class="button-link" href="#most-loved">Explore destinations</a>
+            </div>
 
-        <img src="/friends.jpg" alt="Photo of Rondale James Borondia">
-    </section>
+            <div class="hero-image">
+                <img src="intramurosmanila.jpg"
+                     alt="Historic architecture inside Intramuros, Manila">
+                <p class="image-caption">Start your journey in historic Manila.</p>
+            </div>
+        </section>
 
-    <section>
-        <h2>My Top Picks</h2>
+        <!-- MOST LOVED PLACES -->
+        <section class="guide-section" id="most-loved">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">PLACES WORTH EXPLORING</p>
+                    <h2>Most Loved Places</h2>
+                </div>
+                <p>
+                    Discover landmarks, cultural treasures, and green
+                    spaces for your next Manila adventure.
+                </p>
+            </div>
 
-        <article>
-            <li></li><h3>Intramuros</h3>
-            <p>Historic place in Manila</p>
-            <p>A historic area in Manila known for its colonial architecture and vibrant street culture.</p>
-        
-        <h2>Why I Recommend This Place?</h2> 
-        <p>I recommend Intramuros because it is a great place to explore, take photos, and spend time with friends while experiencing one of Manila's most historic areas.</p>
-        <img src="intramuros.jpg" alt="Photo of Intramuros">
-        <p><a href="places/intramuros.html">Read more</a></p>
+            <div class="destination-grid">
 
-        </article>
+                <article class="destination-card">
+                    <a class="card-image-link" href="places/intramuros.html">
+                        <img src="intramurosmanila.jpg"
+                             alt="Historic streets and buildings of Intramuros">
+                    </a>
+                    <div class="card-content">
+                        <p class="card-category">HISTORY & CULTURE</p>
+                        <h3><a href="places/intramuros.html">Intramuros</a></h3>
+                        <p>
+                            Walk through the historic walled city and discover
+                            architecture, heritage sites, and stories from
+                            Manila's past.
+                        </p>
+                        <a class="text-link" href="places/intramuros.html">
+                            Explore destination →
+                        </a>
+                    </div>
+                </article>
 
-        <article>
-            <li></li><h3>Arroceros Forest Park</h3>
-            <p>A hidden gem in Manila</p>
-            <p>A small urban forest in Manila that offers a peaceful escape from the city's hustle and bustle.</p>
+                <article class="destination-card">
+                    <a class="card-image-link" href="places/arroceros.html">
+                        <img src="arrocerospark.jpg"
+                             alt="Green trees and walking paths at Arroceros Forest Park">
+                    </a>
+                    <div class="card-content">
+                        <p class="card-category">NATURE & RELAXATION</p>
+                        <h3><a href="places/arroceros.html">Arroceros Forest Park</a></h3>
+                        <p>
+                            Take a break from busy city streets in a green
+                            urban space filled with trees and quiet pathways.
+                        </p>
+                        <a class="text-link" href="places/arroceros.html">
+                            Explore destination →
+                        </a>
+                    </div>
+                </article>
 
-        <h2>Why I Recommend This Place?</h2>
-        <p>I recommend Arroceros Forest Park because it is a serene and green space in the middle of the city, perfect for relaxation and nature walks.</p>
-        <img src="arroceros.jpg" alt="Photo of Arroceros Forest Park">
-        <p><a href="places/arroceros.html">Read more</a></p>
+                <article class="destination-card">
+                    <a class="card-image-link" href="places/binondo.html">
+                        <img src="binondochina.jpg"
+                             alt="A street in Binondo Chinatown, Manila">
+                    </a>
+                    <div class="card-content">
+                        <p class="card-category">FOOD & LOCAL CULTURE</p>
+                        <h3><a href="places/binondo.html">Binondo Chinatown</a></h3>
+                        <p>
+                            Explore lively streets, local shops, and a food
+                            scene shaped by Filipino-Chinese heritage.
+                        </p>
+                        <a class="text-link" href="places/binondo.html">
+                            Explore destination →
+                        </a>
+                    </div>
+                </article>
 
-        </article>
+                <article class="destination-card">
+                    <a class="card-image-link" href="places/national-museum.html">
+                        <img src="national.jpg"
+                             alt="The National Museum of the Philippines">
+                    </a>
+                    <div class="card-content">
+                        <p class="card-category">ART & HERITAGE</p>
+                        <h3><a href="places/national-museum.html">National Museum of the Philippines</a></h3>
+                        <p>
+                            Discover Filipino art, history, culture, and
+                            natural heritage through museum collections.
+                        </p>
+                        <a class="text-link" href="places/national-museum.html">
+                            Explore destination →
+                        </a>
+                    </div>
+                </article>
 
-        <article>
-            <li></li><h3>Binondo Manila</h3>
-            <p>The world's oldest Chinatown</p>
-            <p>Binondo is the oldest Chinatown in the world, located in Manila, Philippines.</p>
+                <article class="destination-card">
+                    <a class="card-image-link" href="places/fort-santiago.html">
+                        <img src="fort.avif"
+                             alt="Historic grounds at Fort Santiago">
+                    </a>
+                    <div class="card-content">
+                        <p class="card-category">HISTORIC LANDMARK</p>
+                        <h3><a href="places/fort-santiago.html">Fort Santiago</a></h3>
+                        <p>
+                            Explore a historic fortress within Intramuros
+                            and learn about an important chapter in
+                            Philippine history.
+                        </p>
+                        <a class="text-link" href="places/fort-santiago.html">
+                            Explore destination →
+                        </a>
+                    </div>
+                </article>
 
-        <h2>Why I Recommend This Place?</h2>
-        <p>I recommend Binondo Manila because it is a vibrant and culturally rich area that offers a unique shopping and dining experience.</p>
-        <img src="binondo.jpg" alt="Photo of Binondo Manila">
-        <p><a href="places/binondo.html">Read more</a></p>
+                <article class="destination-card">
+                    <a class="card-image-link" href="places/rizal-park.html">
+                        <img src="rizal.jpg"
+                             alt="Landscaped grounds at Rizal Park in Manila">
+                    </a>
+                    <div class="card-content">
+                        <p class="card-category">PARKS & LANDMARKS</p>
+                        <h3><a href="places/rizal-park.html">Rizal Park</a></h3>
+                        <p>
+                            Visit a well-known city landmark for open spaces,
+                            leisurely walks, and a deeper connection to
+                            Philippine history.
+                        </p>
+                        <a class="text-link" href="places/rizal-park.html">
+                            Explore destination →
+                        </a>
+                    </div>
+                </article>
 
-        </article>
+            </div>
+        </section>
 
-        
-        </article>
-    </section>
+        <!-- BEST TIME TO VISIT -->
+        <section class="best-time-section" id="best-time">
+            <div class="best-time-image">
+                <img src="rizalpark.jpg"
+                     alt="Open green spaces at Rizal Park">
+            </div>
+
+            <div class="best-time-copy">
+                <p class="eyebrow">PLAN YOUR ADVENTURE</p>
+                <h2>Best Time to Visit</h2>
+                <p>
+                    For outdoor walks and sightseeing, mornings are often
+                    more comfortable than the hotter hours of the day.
+                    Weekdays may also feel less crowded at some attractions.
+                </p>
+                <p>
+                    Manila's dry season generally falls around November
+                    to April, while the rainy season commonly runs from
+                    May to October. Weather can vary, so check the forecast
+                    before planning an outdoor visit.
+                </p>
+                <p>
+                    Museum schedules, attraction hours, and admission
+                    policies can change. Check official visitor information
+                    before leaving.
+                </p>
+                <a class="text-link" href="https://www.pagasa.dost.gov.ph/"
+                   target="_blank" rel="noopener noreferrer">
+                    Check the weather forecast →
+                </a>
+            </div>
+        </section>
+
+        <!-- FOODIE HOTSPOTS -->
+        <section class="food-section" id="foodie-hotspots">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">A TASTE OF MANILA</p>
+                    <h2>Foodie Hotspots</h2>
+                </div>
+                <p>
+                    Find your next food stop, from traditional favorites
+                    to lively neighborhood food streets.
+                </p>
+            </div>
+
+            <article class="food-feature">
+                <img src="binondochina.jpg"
+                     alt="Binondo Chinatown, known for its Filipino-Chinese food scene">
+
+                <div class="food-feature-copy">
+                    <p class="card-category">FOOD & CULTURE</p>
+                    <h3>Take a food trip through Binondo</h3>
+                    <p>
+                        Make time to explore Binondo's food shops, restaurants,
+                        and street-side discoveries. It is a great starting
+                        point for anyone who wants to experience Manila
+                        through its local food culture.
+                    </p>
+                    <a class="button-link" href="places/binondo.html">
+                        Explore Binondo
+                    </a>
+                </div>
+            </article>
+        </section>
+
+        <!-- CLOSING CALL TO ACTION -->
+        <section class="closing-section">
+            <p class="eyebrow">YOUR NEXT DISCOVERY STARTS HERE</p>
+            <h2>There is always more to explore.</h2>
+            <p>
+                Save a place for your next trip and keep discovering
+                the stories, sights, and flavors of Manila.
+            </p>
+            <a class="button-link" href="contact.html">Suggest a destination</a>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Carver Street Finds | Discover the places and stories of Manila.</p>
+        <p>Created by Rondale James Borondia</p>
+    </footer>
 
 </body>
 </html>
