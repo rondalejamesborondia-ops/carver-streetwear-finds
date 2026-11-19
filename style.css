@@ -461,13 +461,14 @@ button:hover {
 /* 9. DESTINATION CARDS */
 
 .destination-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: stretch;
-    gap: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
 }
 
 .destination-card {
+    flex: 1 1 240px;
     min-width: 0;
     margin: 0;
     padding: 0;
@@ -1228,10 +1229,9 @@ form input[type="submit"]:hover {
 
 /* 22. TABLET RESPONSIVENESS */
 
+/* 22. TABLET RESPONSIVENESS */
+
 @media (max-width: 900px) {
-    .destination-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 
     .detail-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1318,9 +1318,9 @@ form input[type="submit"]:hover {
         font-size: 0.98rem;
     }
 
-    .hero-image img {
-        height: 280px;
-        border-radius: var(--radius-medium);
+     i.hero-image img {
+    height: 280px;
+    border-radius: var(--radius-medium);
     }
 
     .hero-note {
@@ -1346,7 +1346,6 @@ form input[type="submit"]:hover {
         padding: var(--section-space) var(--page-gutter);
     }
 
-    .destination-grid,
     .detail-grid,
     .related-links {
         grid-template-columns: 1fr;
