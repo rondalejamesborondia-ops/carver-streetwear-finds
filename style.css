@@ -1105,8 +1105,9 @@ input:focus,
 select:focus,
 textarea:focus {
     border-color: var(--brand-color);
-    box-shadow: 0 0 0 3px rgba(41, 72, 59, 0.1);
-    outline: none;
+    outline: 3px solid var(--accent-dark);
+    outline-offset: 2px;
+    box-shadow: none;
 }
 
 select {
@@ -1535,4 +1536,25 @@ form input[type="submit"]:hover {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
     }
+}
+
+
+/* ========================================
+   MODULE 5.4 - REUSABLE PLACE CARDS
+======================================== */
+
+.place-card {
+    margin-bottom: 24px;
+    padding: 24px;
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--brand-color);
+    border-radius: var(--radius-medium);
+    background: var(--surface-color);
+}
+
+.place-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--brand-color);
+    font-size: 1.3rem;
 }
